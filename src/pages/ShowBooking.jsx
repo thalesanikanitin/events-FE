@@ -14,7 +14,7 @@ const ShowBooking = () => {
 
   const fetchBookings = () => {
     axios
-      .get("http://localhost:9000/get")
+      .get("https://events-be-1-yyfw.onrender.com/get")
       .then((res) => setBookings(res.data))
       .catch((err) => console.error("Error fetching bookings:", err));
   };
@@ -29,7 +29,7 @@ const ShowBooking = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:9000/delete/${id}`)
+      .delete(`https://events-be-1-yyfw.onrender.com/delete/${id}`)
       .then(() => setBookings(bookings.filter((b) => b._id !== id)))
       .catch((err) => console.error("Error deleting:", err));
   };
@@ -50,7 +50,7 @@ const ShowBooking = () => {
   const handleUpdateSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:9000/update/${selectedId}`, { name, event, time, phone })
+      .put(`https://events-be-1-yyfw.onrender.com/update/${selectedId}`, { name, event, time, phone })
       .then(() => {
         fetchBookings();
         closeModal();

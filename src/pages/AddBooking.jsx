@@ -10,7 +10,7 @@ const AddBooking = () => {
 
   let handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:9000/add", { name, event, time, phone })
+    axios.post("https://events-be-1-yyfw.onrender.com/add", { name, event, time, phone })
       .then(() => {
         alert("Booking successful!");
         setName("");
